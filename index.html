@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrew Minutes Dashboard</title>
+  <meta name="description" content="Minutes, starts, availability, and season progress." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Password Gate -->
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <div class="gate-title">Enter password</div>
+      <p class="muted">This page is private.</p>
+
+      <form id="gateForm" class="gate-form">
+        <input id="gatePassword" class="gate-input" type="password" autocomplete="current-password" placeholder="Password" />
+        <button class="btn primary" type="submit">Unlock</button>
+      </form>
+
+      <p id="gateError" class="gate-error" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div id="site" class="site-hidden">
+
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <div class="logo">AM</div>
+        <div>
+          <div class="brand-title">Andrew Minutes</div>
+          <div class="brand-subtitle">Season 25/26</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#updates">Updates</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Minutes and involvement, made simple</h1>
+        <p class="lead">
+          A clear view of matches played, starts, minutes, availability, and trends.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#dashboard">View dashboard</a>
+        </div>
+
+        <p class="meta">
+          Last refreshed: <span id="lastRefresh">–</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section">
+      <div class="container">
+        <h2>Dashboard</h2>
+        <p class="muted">
+          Open the live Looker Studio report or embed it below.
+        </p>
+
+        <div class="card">
+          <div class="card-row">
+            <div>
+              <div class="card-title">Live report</div>
+              <p class="muted">Opens in a new tab</p>
+            </div>
+            <a class="btn primary" id="openReport" href="#" target="_blank">
+              Open report
+            </a>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="embed-frame">
+            <iframe
+              id="reportFrame"
+              title="Looker Studio Dashboard"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates" class="section alt">
+      <div class="container">
+        <h2>Updates</h2>
+        <div class="card">
+          <ul class="list">
+            <li>Games played, starts, availability, and averages added.</li>
+            <li>Dashboard refreshed weekly.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <div class="card">
+          <p>
+            This site wraps a Google Sheet and Looker Studio dashboard into a clean,
+            shareable view.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Andrew Minutes</span>
+      <span class="muted">Simple HTML, CSS, and JavaScript</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  </div>
+</body>
+</html>
